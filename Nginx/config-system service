@@ -1,5 +1,11 @@
-#tell you how to add you nginx service into system service 
+# tell you how to add you nginx service into system service and make the service auto-run when the system reboot
 # the code below is undertest
+# but the drawback is that you need to make sure the service start first ,otherwise these orders won't work!!!
+# add the service into system, so we can use 'systemctl start/stop/reload nginx' to control nginx process! 
+
+# start the service when system start 
+# reference is below
+$ /etc/rc.d/rc.local 
 
 
 #!/bin/bash
