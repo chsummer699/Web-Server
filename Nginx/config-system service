@@ -1,0 +1,26 @@
+#tell you how to add you nginx service into system service 
+# the code below is undertest
+
+
+#!/bin/bash
+# chkconfig: - 85 16  #it's very important
+# description: Nginx Service Control Script and nginx is a world wide web server!
+ case "$1" in
+   start)
+          /usr/local/nginx/sbin/nginx    
+          ;;
+   stop)
+          /usr/bin/killall -s QUIT nginx
+             ;;
+   restart)
+          $0 stop
+          $0 start
+          ;;
+   reload)
+          /usr/bin/killall -s HUP nginx
+          ;;
+   *)
+     echo "Usage:$0 {start|stop|restart|reload}"
+     exit 1
+ esac
+ exit 0
